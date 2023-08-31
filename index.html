@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        body{
+            background-color:black;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            
+        }
+        .Clock{
+            padding-top:200px;
+            color:#fff;
+            font-family:'Orbitron',sans-serif;
+            letter-spacing:1rem;
+            font-size:4rem;
+
+        }
+    </style>
+</head>
+<body>
+ <div class="Clock">
+
+ </div> 
+ <script>
+    let Clock=document.querySelector('.Clock');
+    function disptime(){
+        let hours=new Date().getHours();
+        let mins=new Date().getMinutes();
+        let secs=new Date().getSeconds();
+
+
+
+        hours=hours<10? "0"+hours : hours;
+        mins=mins<10? "0"+mins : mins;
+        secs=secs<10? "0"+secs : secs;
+        
+        Clock.innerHTML = hours+" : "+mins+" : "+secs;
+        setTimeout(disptime,1000);
+
+    }
+    disptime();
+    
+    
+</script>  
+</body>
+
+</html>
